@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('/images/guestbookbg.jpg');
+    background-size: cover; /* 배경 이미지를 화면에 꽉 채움 */
+    background-position: center;
+    height: 100vh;
+    opacity: 0.8;
+}
+
+.container {
+    width: 50vw;
+    margin: 20px auto;
+    padding: 0px 20px 20px 20px;
+}
+
+.container h1 {
+    text-align: center;
+    color: #586060;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.todo-input {
+    width: 50vw;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 10px; /* 내부 여백을 늘려 입체감을 부여 */
+    opacity: 0.5; /* 약간의 투명도 적용 */
+    border: none; /* 테두리 없애기 */
+    border-radius: 8px; /* 모서리를 둥글게 조정 */
+    box-shadow: 0 2px 4px rgba(196, 191, 191, 0.2); /* 약간의 그림자 추가 */
+    background-color: #b4afa0; /* 배경색 지정 */
+    transition: transform 0.3s ease; /* 호버 효과를 위한 변환 효과 설정 */
+}
+
+/* 호버 효과를 적용하여 약간의 확대 효과 부여 */
+.todo-input:hover {
+    transform: scale(1.03);
+}
+
+.todos-container {
+    display: flex;
+    flex-direction: column; /* 세로 배치 설정 */
+    gap: 10px; /* 요소 사이의 간격 */
+    width: 80%; /* 컨테이너의 너비를 설정 (필요에 따라 조정 가능) */
+    max-width: 600px; /* 최대 너비 설정 */
+}
+
+.todo-item {
+    background-color: rgba(227, 228, 223, 0.3); /* 투명도 조정 */
+    color: #665050; /* 글씨 색상을 진하게 설정 */
+    font-weight: 500; /* 글씨를 더 진하게 설정 */
+    padding: 5px;
+    margin-bottom: 1px;
+    font-size: 16px;
+    width: 50vw;
+    position: relative; /* 자식 요소를 absolute 로 배치 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word; /* 긴 단어가 있을 때 줄바꿈 처리 */
+}
+
+.todo-item:hover {
+    background-color: #ddd;
+}
+
+.delete-btn {
+    display: none; /* 초기에는 숨겨짐 */
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    background-color: rgba(168, 39, 51, 0.7);
+    color: white;
+    border: none; /* 테두리 없애기 */
+    padding: 5px 10px;
+    border-radius: 10%;
+    font-size: 10px;
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+}
+
+.todo-item:hover .delete-btn {
+    display: block; /* 마우스를 올리면 삭제 버튼이 나타남 */
+}
