@@ -36,8 +36,11 @@
     font-weight: bold;
  }
 
- h2 {
+ #timelinesection h2 {
+    font-size: 5vh;
+    color : #f0f0f0;
  }
+
 
  h5 {
     font-weight: 600;
@@ -58,12 +61,14 @@
  hr {
     border-top: 5px solid #1abc9c;
     width: 80px;
+    opacity: 0.5;
     padding-bottom: 20px;
  }
 
 
+
  .colour-splash {
-    color: #1abc9c;
+    color: #52887e;
  }
 
  .section-primary span {
@@ -81,19 +86,29 @@
 
 /* 02. Intro
  * =================================================================== */
-
  .section-image {
- 	background: #151515 url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=compress,format&crop=entropy&fit=crop&w=1199&h=799&q=80) no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+    background: #151515 url('/images/background2.JPG') no-repeat left center;
     background-size: cover;
     width: 100%;
     height: 100vh;
     position: relative;
     text-align: center;
     color: #fff;
-    display:table;
- }
+    display: table;
+    animation: moveRightLeft 20s linear infinite;
+  }
+  
+  @keyframes moveRightLeft {
+    0%, 100% {
+      background-position: left center; /* 초기 위치는 왼쪽으로 설정 */
+    }
+    50% {
+      background-position: right center; /* 중간 위치는 오른쪽으로 설정 */
+    }
+  }
+  
+  
+  
 
  .img-overlay {
     position: absolute;
@@ -102,29 +117,32 @@
     width: 100%;
     height: 100%;
     background: #111111;
-    opacity: .7;
+    opacity: .3;
  }
 
+
  .intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     vertical-align: middle;
     text-align: center;
-    display:table-cell;
-    -webkit-transform: translateY(-2.1rem);
-    -ms-transform: translateY(-2.1rem);
-    transform: translateY(-2.1rem);
+    opacity: 0; /* 초기에 투명도를 0으로 설정 */
+    transition: opacity 7s ease; /* 투명도가 변하는 애니메이션을 설정 */
 }
 
-.intro .row {
-    margin-right: 0;
-    margin-left:0;
+.intro.show {
+    opacity: 1; /* show 클래스가 추가되면 투명도가 1로 변경*/
 }
 
 .intro h1 {
-    font-size: 84px;
+    font-size: 8vh;
+    /*font-size: 84px;*/
 }
 
 .intro h5 {
-    color: #1abc9c;
+    color: #52887e;
     font-size: 2.3rem;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -150,6 +168,7 @@
 
 
 
+
 /* 03. Social Icons
  * =================================================================== */
 
@@ -164,7 +183,8 @@
 .social a {
   color: white;
   text-decoration:none;
-  padding: 2em;
+  padding: 1.6em; /* 수정 */
+
 }
 
 .social a:hover{
@@ -202,16 +222,19 @@ section {
 
 .profilepic {
     height: 150px;
-    width: auto;
-    border-radius: 300px;
+    width: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
 }
 
 .section-primary p {
-    text-align: justify;
+    text-align: justify; /* 텍스트를 왼쪽 정렬 */
 }
+
 
 .section-primary {
     border: #1abc9c;
+    background-color: #111111e3;
 }
 
 .section-colour {
@@ -235,6 +258,17 @@ section {
     border-top: 5px solid #fff;
  }
 
+#about{
+    height : 100vh;
+}
+#about h2 {
+    color: #f0f0f0; /* 제목 색상 변경 */
+}
+
+#about .lead {
+    color: #f0f0f0; /* 본문 색상 변경 */
+}
+
 
 
 /* 01. Timeline Styles
@@ -247,27 +281,134 @@ section {
 }
 
 #skills {
-    background: #151515 url(https://images.unsplash.com/photo-1456983933114-c22026990f4b?dpr=2&auto=format&crop=entropy&fit=crop&w=1280&h=720&q=80) no-repeat center center;
-    height: auto;
+    background: #151515 url('/images/background1.JPG') no-repeat center bottom;
+    background-size: cover;
+    background-attachment: fixed; /* This ensures the background image stays fixed */
+    height: 100vh; /* Sets the section's height to match the viewport height */
+}
+#skills p {
+    font-size: 1.2em; /* Increase font size */
+    font-weight: 400;
+    line-height: 1.6; /* Increase line spacing */
+    margin-top: 20px; /* Add top margin for spacing */
 }
 
+#skills h2 {
+    margin-bottom: 20px; /* Add bottom margin for spacing */
+}
+
+#skills .col-md-12 h2{
+    font-weight: 500;
+    font-size: 5vh;
+    margin-bottom: 60px;
+ }
+
+
+#skills .col-md-4 hr {
+    border-top: 5px solid #e3eae8;
+    width: 80px;
+    opacity: 0.5;
+    padding-bottom: 20px;
+ }
+
+ #skills .col-md-12 hr {
+    border-top: 5px solid #e3eae8;
+    width: 80px;
+    opacity: 0.5;
+    padding-bottom: 20px;
+ }
+ 
+
+/*interests*/
+
+#interest {
+    background: #151515 url('/images/interestsbg1.jpg') no-repeat center bottom;
+    background-size: cover;
+    background-attachment: fixed; /* This ensures the background image stays fixed */
+    height: 100vh; /* Sets the section's height to match the viewport height */
+}
+#interest p {
+    font-size: 1.2em; /* Increase font size */
+    font-weight: 400;
+    line-height: 1.6; /* Increase line spacing */
+    margin-top: 20px; /* Add top margin for spacing */
+}
+
+#interest h2 {
+    margin-bottom: 100px; /* Add bottom margin for spacing */
+}
+
+#interest .col-md-12 h2{
+    font-weight: 500;
+    font-size: 5vh;
+    margin-bottom: 60px;
+ }
+
+
+ #interest .col-md-12 hr {
+    border-top: 5px solid #e3eae8;
+    width: 200px;
+    opacity: 0.5;
+    padding-bottom: 40px;
+ }
+/* guest*/
+
+.section-last {
+    background: #151515 url('/images/stars.JPG') no-repeat left center;
+    background-size: cover;
+    background-attachment: fixed; /* This ensures the background image stays fixed */
+    height: 100vh; /* Sets the section's height to match the viewport height */
+    color : #858282;
+}
+
+.section-last hr{
+    border-top: 5px solid #858282;
+    width: 120px;
+    opacity: 0.5;
+    padding-bottom: 20px;
+}
+
+
+#letter {
+    font-style: italic;
+}
+
+#thanks {
+    font-size: 17px;
+}
 
 /* 05. Footer
  * =================================================================== */
 
-footer {
+ footer {
     display: block;
     position: static;
     bottom: 0;
-    background-color: black;
+    background-color: #151515;
     color: #fff;
     padding: 50px 0;
-
+    text-align: center;
 }
 
 footer p {
-    padding: 15px;
+    padding: 1px;
     opacity: 0.8;
+    font-size: 12px;  /* 폰트 크기 줄임 */
+    line-height: 1.2;  /* 줄간격 조정 */
+}
+
+.social-footer {
+    margin-bottom: 20px;
+}
+
+.social-footer a {
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-footer a:hover {
+    color: #1abc9c;
 }
 
 

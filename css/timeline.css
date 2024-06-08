@@ -153,6 +153,7 @@ header .social .btn {
   width: 45%;
   background: #fff;
   padding: 20px;
+  padding-bottom: 5px;
   -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
@@ -171,7 +172,8 @@ header .social .btn {
   background: #1abc9c;
   color: #fff;
   margin: -20px -20px 0 -20px;
-  font-weight: 300;
+  font-weight: 600;
+  font-size: 1.5em;
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;
   -ms-border-radius: 3px 3px 0 0;
@@ -180,6 +182,7 @@ header .social .btn {
 
 #timeline .timeline-item .timeline-content p {
   padding-top: 15px;
+  font-size: 1.2em;
 }
 
 #timeline .timeline-item .timeline-content:before {

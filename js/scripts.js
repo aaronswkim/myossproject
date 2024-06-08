@@ -19,6 +19,11 @@ $(function() {
       }
     }
   });
+
+  setTimeout(function() {
+    var intro = document.querySelector('.intro');
+    intro.classList.add('show');
+  }, 500);
 });
 
 
