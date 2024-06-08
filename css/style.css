@@ -362,7 +362,7 @@ section {
 }
 
 .section-last hr{
-    border-top: 5px solid #858282;
+    border-top: 5px solid #d5d1d1;
     width: 120px;
     opacity: 0.5;
     padding-bottom: 20px;
@@ -375,6 +375,11 @@ section {
 
 #thanks {
     font-size: 17px;
+    font-weight: 500px;
+}
+
+#thanks .colored-text {
+    color: #1abc9c; /* 원하는 색상으로 변경 */
 }
 
 /* 05. Footer
