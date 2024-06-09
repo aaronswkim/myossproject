@@ -1,6 +1,8 @@
 const host = "http://127.0.0.1:8080";
 const todosContainer = document.querySelector(`.todos-container`);
-
+const authorInput = document.querySelector('.author-input');
+const contentInput = document.querySelector('.content-input');
+const addTodoBtn = document.querySelector('.add-todo-btn');
 
 function getTodos() {
     axios.get(`${host}/todo`)
@@ -18,7 +20,17 @@ function renderTodos(todos) {
     todos.forEach(todo => {
         const todoDiv = document.createElement('div');
         todoDiv.classList.add('todo-item');
-        todoDiv.textContent = todo.item;
+        const date = new Date(todo.timestamp);
+        const formattedDate = date.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+        });
+
+        todoDiv.textContent = `${todo.author}, "${todo.content}", ${formattedDate}`;
         todosContainer.appendChild(todoDiv);
         
     // 삭제 버튼 생성 및 이벤트 처리
@@ -39,29 +51,31 @@ window.addEventListener('DOMContentLoaded', function () {
     getTodos();
 });
 
-const todoInput = document.querySelector('.todo-input');
-
-todoInput.addEventListener('keypress', function (event) {
-    if (event.key === 'Enter') {
-        addTodo();
-    }
+addTodoBtn.addEventListener('click', function() {
+    addTodo();
 });
 
 function addTodo() {
-    const title = todoInput.value.trim();
+    const author = authorInput.value.trim();
+    const content = contentInput.value.trim();
+    
+    if (author === '' || content === '') return;
+    
     let todoData = {
         id: 0,
-        item: title
+        author: author,
+        content: content
     };
-    if (title ==='') return;
+
     axios.post(`${host}/todo`, todoData)
         .then(response => {
-            todoInput.value = '';
+            authorInput.value = '';
+            contentInput.value = '';
             getTodos();
-    })
-    .catch(error => {
-    console.error('Error adding todo:', error);
-    });
+        })
+        .catch(error => {
+            console.error('Error adding todo:', error);
+        });
 }
 
 function deleteTodo(todoId) {
