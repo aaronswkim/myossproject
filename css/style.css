@@ -90,11 +90,14 @@
     background: #151515 url('/images/background2.JPG') no-repeat left center;
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    
     position: relative;
     text-align: center;
     color: #fff;
     display: table;
+  }
+#first{
+    height: 100vh;
     animation: moveRightLeft 20s linear infinite;
   }
   
@@ -258,9 +261,7 @@ section {
     border-top: 5px solid #fff;
  }
 
-#about{
-    height : 100vh;
-}
+
 #about h2 {
     color: #f0f0f0; /* 제목 색상 변경 */
 }
@@ -284,7 +285,7 @@ section {
     background: #151515 url('/images/background1.JPG') no-repeat center bottom;
     background-size: cover;
     background-attachment: fixed; /* This ensures the background image stays fixed */
-    height: 100vh; /* Sets the section's height to match the viewport height */
+    height: 100%; /* Sets the section's height to match the viewport height */
 }
 #skills p {
     font-size: 1.2em; /* Increase font size */
@@ -357,7 +358,7 @@ section {
     background: #151515 url('/images/stars.JPG') no-repeat left center;
     background-size: cover;
     background-attachment: fixed; /* This ensures the background image stays fixed */
-    height: 100vh; /* Sets the section's height to match the viewport height */
+    /* Sets the section's height to match the viewport height */
     color : #858282;
 }
 
@@ -380,6 +381,13 @@ section {
 
 #thanks .colored-text {
     color: #1abc9c; /* 원하는 색상으로 변경 */
+}
+
+.guestbooklink p{
+    color: #1abc9c;
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 5px;
 }
 
 /* 05. Footer
@@ -489,63 +497,54 @@ footer p {
          * =================================================================== */
 
  
-/* Media Queries
- * =================================================================== */
-
+/* Media Queries */
 @media (max-width: 480px) {
-    .social a {
-        padding: 0.4em;
-        font-size: 0.9em;
+    /* 화면 폭이 480px 이하인 경우 */
+
+    /* 섹션의 크기에 맞게 배경 이미지 조정 */
+    .section-last {
+        background-size: cover; /* 배경 이미지를 섹션의 크기에 맞게 조정 */
+        background-position: center; /* 배경 이미지의 위치를 가운데로 설정 */
     }
 
-    .social-footer {
-        text-align: center;
-        position:block;
-        text-align: center;
+    /* 텍스트 크기를 조정하여 겹치지 않게 함 */
+    .section-last p {
+        font-size: 0.8em; /* 섹션 내부의 텍스트 크기를 조정 */
     }
 
+    /* 푸터의 아이콘 크기를 조정 */
     .social-footer a {
-        padding: 0.3em;
-        font-size: 1.6em;
-
+        font-size: 1em; /* 푸터의 아이콘 크기를 다시 원래 크기로 조정 */
     }
 
-    .intro-desc {
-        font-size: 0.7em;
-    }
-
-    .section-image span {
-        font-size: 1em;
-        padding: 0 1px;
-
-}
-
+    /* 헤더의 크기를 조정 */
     .intro h1 {
-        font-size: 50px;
-        padding-top: 15px;
+        font-size: 30px; /* 헤더의 크기를 조정 */
+        padding-top: 10px;
     }
 
     footer {
         text-align: center;
-        padding-bottom: 100px;
+        padding-bottom: 50px; /* 푸터의 패딩을 조정 */
     }
 
     #skills {
-        background: #151515 url(https://images.unsplash.com/photo-1456983933114-c22026990f4b?dpr=2&auto=format&crop=entropy&fit=crop&w=1280&h=720&q=80) no-repeat center center;
-        background-position: top center;
-
+        background: #151515 url(/images/background1.JPG) no-repeat center center;
+        background-size: cover; /* 배경 이미지를 요소에 맞게 조정 */
+        background-attachment: fixed; /* 배경 이미지가 스크롤되지 않도록 고정 */
     }
 }
 
 @media (max-width: 991px) {
+    /* 화면 폭이 991px 이하인 경우 */
+
     .social-footer {
         text-align: center;
     }
 
     footer p {
-    text-align: center;
+        text-align: center;
     }
-
 }
 
 
