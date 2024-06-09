@@ -1,4 +1,4 @@
-2022204001 김선욱 개인프로젝트
+2022204001 김선욱 개인프로젝트(프론트엔드)
 
 참고한 오픈소스 링크 : https://github.com/izzydoesizzy/resumetemplate
 
